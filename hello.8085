@@ -1,0 +1,11 @@
+LXI H, MSG
+CALL PRINT
+HLT
+PRINT:
+MOV A, M
+CMP A
+RZ
+OUT 0xF0
+INX H
+JMP PRINT
+MSG: "Hello World!\n\0"
