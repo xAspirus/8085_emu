@@ -10,7 +10,7 @@ def header():
 	global code
 	code = ''
 	puts('enum {\n')
-	with open('opcodes.txt', 'r') as f:
+	with open('8085_asm/opcodes.txt', 'r') as f:
 		
 		for opcode in f:
 			opcode = opcode.split()

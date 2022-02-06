@@ -1,0 +1,3 @@
+[submodule "terminal_py"]
+	path = terminal_py
+	url = https://github.com/xAspirus/terminal_py
