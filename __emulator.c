@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include "emulator.h"
-#include "ui.c"
 
 
 uint8_t A, T, B, C, D, E, H, L;
@@ -83,6 +82,11 @@ void call(uint16_t a) {
 void ret() {
 	PC = (uint16_t)MEM[SP + 1] | ((uint16_t)MEM[SP] << 8);
 	SP += 2;
+}
+
+
+void debugger_breakpoint() {
+	
 }
 
 
@@ -564,9 +568,7 @@ int main(int argc, char** argv) {
 	
 	SP = 0xFFFF;
 	
-	while (execute()) {
-		ui_show();
-	}
+	while (execute());
 	
 }
  
