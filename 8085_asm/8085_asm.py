@@ -58,7 +58,7 @@ def error(file, line_no, error_type, value = None):
 		('statement', '(?i)\\b(rst|push|pop|xthl|sphl|sim|rim|ei|pchl|nop|hlt|brk)\\b')
 	)
 	
-	print_highlighted(file.split('\n')[line_no - 1], (), Themes.default, numbered = True, ln = line_no)
+	print_highlighted(file.split('\n')[line_no - 1], syntax_rules, Themes.default, numbered = True, ln = line_no)
 	
 	if error_type == "hex_literal_err":
 		print(f'{Colors.Fg.red}{error_type}:{Colors.reset} Hex literal {value} too big.')
