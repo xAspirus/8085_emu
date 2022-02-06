@@ -1,25 +1,20 @@
 # 8085_emu
-An emulator based on the intel 8085 chip. Tested on Arch Linux only.
+An emulator based on the intel 8085 chip.
+Currently it only supports Linux systems. (possibly should work on macOS)
 
 ### Installation
 
-**Emulator**
+**Compile**
 ```
 make gen build
 ```
 
-**Assembler**
-The assembler requires python 3 and rich library.
-```
-pip3 install rich
-```
-
-Install both emulator and assembler
+**Install**
 ```
 make install
 ```
 
-Uninstall both emulator and assembler
+**Uninstall**
 ```
 make uninstall
 ```
@@ -45,15 +40,5 @@ EI
 
 ### Debugging
 
-The `EI` instruction is used to set a breakpoint. It will start a debug prompt which accepts the following commands.
-`BRK` can be used as a alias for `EI` in the assembler.
-
-```
-all               print all registers and their values
-mem addr          print memory at addr
-mem addr1 addr2   print memory from addr1 to addr2
-```
-
-### Assembler
-
-The assembler requires `opcodes.txt` to be present in current directory.
+The `EI` instruction is used to set a breakpoint. It will start a debug prompt.
+`BRK` can be used as a alias for `EI` in the assembler
