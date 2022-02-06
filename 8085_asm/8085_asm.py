@@ -43,6 +43,21 @@ INST_2 = set(INST_2)
 
 def error(file, line_no, error_type, value = None):
 	
+	syntax_rules = (
+		('operator', '[,]'),
+		('function', '[A-Za-z0-9_]+'),
+		('function:', '[A-Za-z0-9_]+:'),
+		('number', '[0-9A-Fa-f]+"'),
+		('constant:', '(?i)\\b(a|b|c|d|e|h|l|m|A|B|C|D|E|H|L|M)\\b'),
+		('statement', '(?i)\\b(mov|mvi|ldax|stax|lda|sta|lxi|lhld|shld|xchg|in|out)\\b'),
+		('statement', '(?i)\\b(add|adi|adc|aci|sub|sui|sbb|sbi|inr|dcr|inx|dcx|dad|daa)\\b'),
+		('statement', '(?i)\\b(ana|ora|xra|cmp|ani|ori|xri|cpi|cma|cmc|stc|rlc|rrc|ral|rar)\\b'),
+		('statement', '(?i)\\b(jmp|jc|jnc|jp|jm|jpe|jpo|jz|jnz)\\b'),
+		('statement', '(?i)\\b(call|cc|cnc|cp|cm|cpe|cpo|cz|cnz)\\b'),
+		('statement', '(?i)\\b(ret|rc|rnc|rp|rm|rpe|rpo|rz|rnz)\\b'),
+		('statement', '(?i)\\b(rst|push|pop|xthl|sphl|sim|rim|ei|pchl|nop|hlt|brk)\\b'),
+	)
+	
 	print_highlighted(file.split('\n')[line_no - 1], (), Themes.default, numbered = True, ln = line_no)
 	
 	if error_type == "hex_literal_err":

@@ -33,13 +33,12 @@ class Themes:
 	}
 
 
-def print_highlighted(file, rules, theme, numbered = False):
+def print_highlighted(file, rules, theme, numbered = False, ln = 0):
 	buf = [str()] * len(file)
 	for rule in rules:
 		for i in re.finditer(rule[1], file, re.MULTILINE):
 			for x in range(i.span()[0], i.span()[1]):
 				buf[x] = rule[0]
-	ln = 1
 	if numbered:
 		print(f'{ln:>8} | ', end = '')
 	old_color = ''
