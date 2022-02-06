@@ -55,7 +55,7 @@ def error(file, line_no, error_type, value = None):
 		('statement', '(?i)\\b(jmp|jc|jnc|jp|jm|jpe|jpo|jz|jnz)\\b'),
 		('statement', '(?i)\\b(call|cc|cnc|cp|cm|cpe|cpo|cz|cnz)\\b'),
 		('statement', '(?i)\\b(ret|rc|rnc|rp|rm|rpe|rpo|rz|rnz)\\b'),
-		('statement', '(?i)\\b(rst|push|pop|xthl|sphl|sim|rim|ei|pchl|nop|hlt|brk)\\b'),
+		('statement', '(?i)\\b(rst|push|pop|xthl|sphl|sim|rim|ei|pchl|nop|hlt|brk)\\b')
 	)
 	
 	print_highlighted(file.split('\n')[line_no - 1], (), Themes.default, numbered = True, ln = line_no)
